@@ -5,6 +5,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import SkillLearningPage from "./pages/SkillLearning";
+import ProjectShowcase from "./pages/ProjectShowcase";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
 
@@ -16,6 +18,14 @@ function Router() {
       <Route path={"/admin"} component={AdminDashboard} />
       <Route path={"/dashboard"} component={UserDashboard} />
       <Route path={"/404"} component={NotFound} />
+      <Route path={"/showcase"} component={ProjectShowcase} />
+      <Route path={"/skills/:skillId"} component={SkillLearningPage} />
+      <Route path={"/privacy"} component={() => <div className="p-20 text-center">Privacy Policy Page</div>} />
+      <Route path={"/terms"} component={() => <div className="p-20 text-center">Terms of Service Page</div>} />
+      <Route path={"/cookies"} component={() => <div className="p-20 text-center">Cookie Policy Page</div>} />
+      <Route path={"/security"} component={() => <div className="p-20 text-center">Security Page</div>} />
+      <Route path={"/gdpr"} component={() => <div className="p-20 text-center">GDPR Compliance Page</div>} />
+      <Route path={"/accessibility"} component={() => <div className="p-20 text-center">Accessibility Page</div>} />
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
